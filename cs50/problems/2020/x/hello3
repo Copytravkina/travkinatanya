@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main (void)
+
+{
+    string name = get_string ("What`s your name?");
+    printf ("Hello, %s\n", name);
+
+    int age = get_int ("How old are you?");
+    int days = age*365;
+    printf ("You are at least %i days old\n", days);
+
+
+    if (days < 365)
+    {
+        printf ("You are a newborn child");
+    }
+    
+    if (days > 365 && days < 2555)
+    {
+        printf ("You are in preschol-age child");
+    }
+
+    if (days > 2555 && days < 6570)
+    {
+        printf ("You are in schol-age child");
+    }
+    
+    if (days > 6570)
+    {
+        printf ("You are adult");
+    }
+    
+}
