@@ -1,0 +1,46 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+
+int main (void)
+
+{
+string str = get_string ("Text: ");
+int len = strlen(str);
+
+int letters = 0;
+int words = 0;
+int sentenses = 0;
+for (int i = 0; i<=len; i++)
+ {
+     if (str[i] == ' ')
+     {words++;}
+     else if (str[i] == '.' || str[i] == '!' || str[i] == '?')
+     {sentenses++;}
+     else
+     {letters++;}
+ }
+
+ float x = (words+1)/100.0;
+ float L_average = (letters-1)/x;
+ float S_average = sentenses/x;
+ 
+
+ int read = round(0.0588 * L_average - 0.296 * S_average - 15.8);
+ 
+ 
+  if (read < 1)
+  printf ("Before Grade 1\n");
+ 
+
+  else if (read > 16)
+  printf ("Grade 16+\n");
+  
+  else
+  printf ("Grade: %i\n", read);
+
+
+}
